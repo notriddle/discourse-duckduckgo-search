@@ -1,0 +1,6 @@
+{
+   "name" : "DuckDuckGo Search Suggestion",
+   "about_url" : "https://github.com/notriddle/discourse-duckduckgo-search",
+   "license_url": "https://github.com/notriddle/discourse-duckduckgo-search/blob/master/LICENSE-APACHE",
+   "assets": {}
+}
