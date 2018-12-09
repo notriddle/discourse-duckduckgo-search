@@ -1,29 +1,8 @@
-<script type="text/javascript">
-window.__switchFormToDDG__ = function() {
-    console.log("window.__switchFormToDDG__");
-    var google = document.getElementById("google-search");
-    if (google && google.className !== "duckduckgo-search") {
-        google.className = "duckduckgo-search";
-        google.action = "//duckduckgo.com";
-        google.getElementsByTagName("input")[0].value = google.getElementsByTagName("input")[0].value + " site:" + window.location.hostname;
-        google.getElementsByTagName("button")[0].innerHTML = "DuckDuckGo";
-    } else if (document.getElementsByClassName("spinner").length > 0) {
-        window.setTimeout(window.__switchFormToDDG__, 10);
-    }
-};
-window._switchFormToDDG_ = function() {
-    window.setTimeout(window.__switchFormToDDG__, 1);
-};
-window.addEventListener("DOMContentLoaded", window._switchFormToDDG_);
-</script>
 <script type="text/x-handlebars" data-template-name="components/google-search">
 <div>
-  <form action='//duckduckgo.com' id='google-search' class='duckduckgo-search'>
-    <input type="text" name="q" value="{{searchTerm}} site:{{siteUrl}}">
+  <form action='//duckduckgo.com' id='google-search'>
+    <input type="text" name="q" value="site:{{siteUrl}} {{searchTerm}}">
     <button class="btn btn-primary">DuckDuckGo</button>
   </form>
 </div>
-</script>
-<script type="text/discourse-plugin" version="0.8">
-api.onPageChange(window._switchFormToDDG_);
 </script>
